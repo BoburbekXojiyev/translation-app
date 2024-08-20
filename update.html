@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Dictionary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Update Dictionary</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+
+        <div class="section">
+            <label for="updateWord">Word to Update:</label>
+            <input type="text" id="updateWord" />
+
+            <label for="updateTranslation">New Translation:</label>
+            <input type="text" id="updateTranslation" />
+
+            <button onclick="updateWord()">Update</button>
+
+            <h3>Update Result:</h3>
+            <p id="updateResult"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
