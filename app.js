@@ -1,35 +1,31 @@
-async function translateText() {
-    const sourceLang = document.getElementById('sourceLang').value;
-    const targetLang = document.getElementById('targetLang').value;
-    const text = document.getElementById('translateInput').value;
+// DOM elementlarini olish
+const form = document.getElementById('updateForm');
+const updateWordInput = document.getElementById('updateWord');
+const updateTranslationInput = document.getElementById('updateTranslation');
+const updateResult = document.getElementById('updateResult');
 
-    const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyBIJTYa8-pSRg1vDnl3v-WfOfhLYqL4JoU`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            q: text,
-            source: sourceLang,
-            target: targetLang,
-            format: 'text'
-        })
-    });
+// Formani yuborishni boshqarish
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Formaning standart yuborilishini to'xtatish
 
-    const data = await response.json();
-    document.getElementById('translateResult').innerText = data.data.translations[0].translatedText;
-}
+    // Inputlardan qiymatlarni olish
+    const word = updateWordInput.value.trim();
+    const translation = updateTranslationInput.value.trim();
 
-async function searchWord() {
-    const word = document.getElementById('searchInput').value;
-    // Placeholder logic for search
-    document.getElementById('searchResult').innerText = `Searching for: ${word}`;
-}
+    // Kiritilgan qiymatlarni tekshirish
+    if (word && translation) {
+        // Ma'lumotlarni qayta ishlash (masalan, serverga yuborish yoki lokal saqlash)
+        // Bu yerda faqat namunaviy natijani ko'rsatish
 
-async function updateWord() {
-    const word = document.getElementById('updateWord').value;
-    const translation = document.getElementById('updateTranslation').value;
-    // Placeholder logic for update
-    document.getElementById('updateResult').innerText = `Updated ${word} to ${translation}`;
-}
+        // Natijani ko'rsatish
+        updateResult.textContent = `The word "${word}" has been updated with the new translation: "${translation}".`;
+        updateResult.style.color = 'green'; // Muvaffaqiyatli yangilanganligi haqida tasdiqlash
 
+        // Formani tozalash
+        form.reset();
+    } else {
+        // Xatolik haqida xabar ko'rsatish
+        updateResult.textContent = 'Please fill out both fields.';
+        updateResult.style.color = 'red'; // Xatolik xabari uchun rang
+    }
+});
