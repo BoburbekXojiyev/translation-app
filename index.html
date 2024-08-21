@@ -1,51 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Dictionary</title>
+    <title>Lug'at Dasturi</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Update Dictionary</h1>
-            <nav>
-                <a href="index.html">Home</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="container">
-            <section class="update-section">
-                <h2>Update Word Translation</h2>
-                <form id="updateForm">
-                    <div class="form-group">
-                        <label for="updateWord">Word to Update:</label>
-                        <input type="text" id="updateWord" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="updateTranslation">New Translation:</label>
-                        <input type="text" id="updateTranslation" required />
-                    </div>
-
-                    <button type="submit">Update</button>
-                </form>
-
-                <h3>Update Result:</h3>
-                <p id="updateResult"></p>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Dictionary Update Tool. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="app.js"></script>
+    <div class="container">
+        <h1>Lug'at Dasturi</h1>
+        <a href="translator.html"><button class="main-button">Tarjimon</button></a>
+        <a href="search.html"><button class="main-button">Lug'atda qidirish</button></a>
+        <a href="update.html"><button class="main-button">Lug'atni yangilash</button></a>
+        <button class="exit-button" onclick="window.close()">Chiqish</button>
+    </div>
 </body>
 </html>

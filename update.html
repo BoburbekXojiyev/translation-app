@@ -1,31 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Dictionary</title>
+    <title>Lug'atni yangilash</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <h1>Update Dictionary</h1>
-        <nav>
-            <a href="index.html">Home</a>
-        </nav>
-
-        <div class="section">
-            <label for="updateWord">Word to Update:</label>
-            <input type="text" id="updateWord" />
-
-            <label for="updateTranslation">New Translation:</label>
-            <input type="text" id="updateTranslation" />
-
-            <button onclick="updateWord()">Update</button>
-
-            <h3>Update Result:</h3>
-            <p id="updateResult"></p>
-        </div>
+    <div class="container">
+        <h1>Lug'atni yangilash</h1>
+        <input type="text" id="wordInput" placeholder="Yangilamoqchi bo'lgan so'zni kiriting...">
+        <input type="text" id="translationInput" placeholder="Yangi tarjimani kiriting...">
+        <button id="updateButton">Yangilash</button>
+        <p id="updateResult">Natija: </p>
+        <a href="index.html"><button class="main-button">Orqaga</button></a>
     </div>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
